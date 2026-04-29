@@ -1,0 +1,33 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.python-version
+
+# Data — never commit large data files to Git
+data/raw/
+data/processed/
+*.parquet
+*.csv
+
+# Models
+models/
+*.pkl
+*.pt
+*.h5
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Secrets
+.env
+*.env

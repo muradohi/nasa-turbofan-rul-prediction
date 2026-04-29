@@ -1,0 +1,32 @@
+[project]
+name = "nasa-proj"
+version = "0.1.0"
+description = "Remaining Useful Life prediction on NASA CMAPSS data"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dash>=4.1.0",
+    "dash-bootstrap-components>=2.0.4",
+    "fastapi>=0.136.1",
+    "matplotlib>=3.10.9",
+    "mlflow>=1.27.0",
+    "numpy>=2.4.4",
+    "pandas>=3.0.2",
+    "plotly>=6.7.0",
+    "pyarrow>=24.0.0",
+    "pydantic>=2.13.3",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "torch>=2.11.0",
+    "uvicorn>=0.46.0",
+    "xgboost>=3.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "mypy>=1.20.2",
+    "pytest>=9.0.3",
+    "ruff>=0.15.12",
+]
