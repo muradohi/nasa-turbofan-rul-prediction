@@ -1,34 +1,28 @@
 # Turbofan Engine RUL Prediction
 
-![CI](https://github.com/muradohi/turbofan-rul-prediction/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/muradohi/nasa-turbofan-rul-prediction/actions/workflows/ci.yml/badge.svg)
 
-End-to-end predictive maintenance project: predicting Remaining Useful Life
-(RUL) of turbofan jet engines using NASA's CMAPSS dataset.
+End-to-end predictive maintenance project for estimating Remaining Useful Life (RUL) of turbofan engines using NASA’s CMAPSS dataset.
 
-## What it does
+---
 
-- Loads multivariate sensor time-series for ~100 engines run to failure
-- Engineers rolling features (mean, std, slope) per sensor
-- Trains Ridge and XGBoost baselines, with an LSTM in progress
-- Reports both RMSE and the NASA asymmetric scoring function
-- Serves predictions through a Plotly Dash dashboard (in progress)
+## 🚀 Overview
 
-## Results (FD001)
+This project builds a complete machine learning pipeline for **predictive maintenance**, using multivariate sensor time-series data from simulated turbofan engines.
 
-| Model    | Test RMSE | NASA Score |
-|----------|----------:|-----------:|
-| Ridge    |   ~20     |    ~1100   |
-| XGBoost  |   ~17     |    ~600    |
+The system models degradation patterns over time and provides actionable insights through an interactive dashboard for fleet-level monitoring.
 
-## Quickstart
+---
 
-```bash
-git clone https://github.com/muradohi/nasa-turbofan-rul-prediction.git
-cd nasa_proj
-uv sync
-# put NASA CMAPSS .txt files into data/raw/
-uv run python main.py
-```
+## 🔧 What it does
+
+- Loads multivariate time-series data from 100+ run-to-failure engine trajectories  
+- Engineers degradation-aware features (rolling statistics, trends, variance)  
+- Trains and evaluates regression models for RUL prediction  
+- Evaluates performance using **RMSE** and the **NASA asymmetric scoring function**  
+- Visualizes predictions and sensor behavior through a **Plotly Dash fleet-monitoring dashboard**  
+
+---
 
 ## Project Structure
 
@@ -42,6 +36,41 @@ nasa_proj/
 └── .github/
     └── workflows/       # CI/CD pipeline configuration (GitHub Actions)
 ```
+
+## 📊 Results (FD001)
+
+| Model    | Test RMSE | NASA Score |
+|----------|----------:|-----------:|
+| Ridge    |   ~20     |    ~1100   |
+| XGBoost  |   ~17     |    ~600    |
+
+XGBoost shows improved performance by better capturing nonlinear degradation patterns in sensor data.
+
+---
+
+
+## Quickstart
+
+```bash
+git clone https://github.com/muradohi/nasa-turbofan-rul-prediction.git
+cd nasa_proj
+uv sync
+# put NASA CMAPSS .txt files into data/raw/
+uv run python main.py
+```
+## 🖥️ Dashboard
+
+An interactive dashboard enables:
+
+- Per-engine sensor visualization over time  
+- Predicted Remaining Useful Life (RUL) display  
+- Risk-based engine status (high / medium / low)  
+- Fleet-level monitoring for maintenance prioritisation  
+
+Run locally:
+
+```bash
+uv run python dashboard/app.py
 
 ## Tech stack
 
