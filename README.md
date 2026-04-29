@@ -23,20 +23,25 @@ End-to-end predictive maintenance project: predicting Remaining Useful Life
 ## Quickstart
 
 ```bash
-git clone https://github.com/muradohi/turbofan-rul-prediction.git
-cd turbofan-rul-prediction
+git clone https://github.com/muradohi/nasa-turbofan-rul-prediction.git
+cd nasa_proj
 uv sync
 # put NASA CMAPSS .txt files into data/raw/
-cd src && uv run python train_base.py
+uv run python main.py
 ```
 
-## Structure
+## Project Structure
+
+```text
 nasa_proj/
-├── src/                # data loaders, features, evaluation, training
-├── tests/              # pytest unit tests
-├── notebooks/          # exploratory analysis
-├── data/raw/           # NASA CMAPSS .txt files (not committed)
-└── .github/workflows/  # CI configuration
+├── src/                  # Data loaders, features, evaluation, training
+├── tests/               # Pytest unit tests
+├── notebooks/           # Exploratory analysis and experiments
+├── data/
+│   └── raw/             # NASA CMAPSS .txt files (not committed to git)
+└── .github/
+    └── workflows/       # CI/CD pipeline configuration (GitHub Actions)
+```
 
 ## Tech stack
 
